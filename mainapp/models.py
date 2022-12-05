@@ -26,8 +26,8 @@ class MailingList(models.Model):
     )
     filter_phone_code = models.CharField(
         max_length=3,
-        help_text='Mobile operator phone code for filtering '
-        + 'customers, 3 digits.',
+        help_text=('Mobile operator phone code for filtering '
+                   'customers, 3 digits.'),
         validators=[
             RegexValidator(
                 regex='^\d{3}$',
@@ -37,17 +37,15 @@ class MailingList(models.Model):
     )
     filter_tag = models.CharField(
         max_length=100,
-        help_text='Tag for filtering customers, not more then 100 '
-        + 'characters.'
+        help_text=('Tag for filtering customers, not more then 100 '
+                   'characters.')
     )
 
     def clean(self, *args, **kwargs):
         # Checking that stop more than start
         if self.stop <= self.start:
-            raise ValidationError(
-                'Stop date and time should be more than start date '
-                + 'and time.'
-            )
+            raise ValidationError('Stop date and time should be more '
+                                  'than start date and time.')
 
         super().clean(*args, **kwargs)
 
@@ -104,13 +102,13 @@ class Customer(models.Model):
     phone_number = models.CharField(
         max_length=11,
         unique=True,
-        help_text='Phone number of the customer in format: '
-        + '7XXXXXXXXXX.',
+        help_text=('Phone number of the customer in format: '
+                   '7XXXXXXXXXX.'),
         validators=[
             RegexValidator(
                 regex=r'^7\d{10}$',
-                message='Format should be "7XXXXXXXXXX" where X is '
-                + 'digit.'
+                message=('Format should be "7XXXXXXXXXX" where X is '
+                         'digit.')
             )
         ]
     )

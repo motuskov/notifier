@@ -5,11 +5,12 @@ from rest_framework.decorators import action
 from django.shortcuts import render
 from django.db.models import Count
 
-from .models import Customer, MailingList
+from .models import Customer, MailingList, Message
 from .serializers import CustomerSerializer
 from .serializers import MailingListSerializer
 from .serializers import MailingListsStatisticsSerializer
 from .serializers import MessageSerializer
+from .serializers import SendMessageSerializer
 
 
 class CustomerViewSet(viewsets.ModelViewSet):
