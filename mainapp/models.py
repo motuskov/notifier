@@ -194,6 +194,8 @@ class Message(models.Model):
             mailing_list (MailingList): Mailing list the message will 
             be send for
             customer (Customer): Customer the message will be send to
+
+        Return (Message): Sent message
         '''
         # Defining constants
         ENDPOINT = 'https://probe.fbrq.cloud/v1/send/1'
@@ -237,9 +239,11 @@ class Message(models.Model):
             error_description = (f'Exception:\n{e}')
         finally:
             # Creating message instance
-            cls.objects.create(
+            message = cls.objects.create(
                 mailing_list=mailing_list,
                 customer=customer,
                 status=status,
                 error_description=error_description
             )
+
+        return message

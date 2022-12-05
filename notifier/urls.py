@@ -32,6 +32,16 @@ router.register(
     views.MailingListViewSet,
     basename='mailing_list'
 )
+router.register(
+    r'mailing_lists_statistics',
+    views.MailingListsStatisticsViewSet,
+    basename='mailing_lists_statistics'
+)
+router.register(
+    r'active_mailing_lists',
+    views.ActiveMailingListsViewSet,
+    basename='active_mailing_lists'
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
