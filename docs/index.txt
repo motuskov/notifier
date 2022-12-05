@@ -1,0 +1,41 @@
+======================
+Notifier documentation
+======================
+
+Starting up development project
+===============================
+
+To start up the project follow steps below (assuming you use Linux and Python 3.6 has already installed):
+
+1. Create a new virtual environment (using virtualenv, for example):
+
+   virtualenv --python=python3 notifier
+   source notifier/bin/activate
+   cd ./notifier
+
+2. Copy Notifier's Django project to created virtual environment folder:
+
+   cp ...
+   cd ./notifier
+
+3. Install project's requirements:
+
+   pip install -r ./docs/requirements.txt
+
+4. Run project's migrations:
+
+   python manage.py migrate
+
+5. Create an administrative user:
+
+   python manage.py createsuperuser
+
+6. Run the development server:
+
+   python manage.py runserver 0:8001
+
+7. In separate terminal run the scheduler:
+
+   python manage.py runscheduler
+
+8. Go to 'http://127.0.0.1:8001/', 'http://127.0.0.1:8001/doc/' or 'http://127.0.0.1:8001/admin/'
