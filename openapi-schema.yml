@@ -1,0 +1,527 @@
+openapi: 3.0.2
+info:
+  title: ''
+  version: ''
+paths:
+  /customers/:
+    get:
+      operationId: listCustomers
+      description: Provides API for Customer entity.
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Customer'
+          description: ''
+      tags:
+      - customers
+    post:
+      operationId: createCustomer
+      description: Provides API for Customer entity.
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Customer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+          description: ''
+      tags:
+      - customers
+  /customers/{id}/:
+    get:
+      operationId: retrieveCustomer
+      description: Provides API for Customer entity.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this customer.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+          description: ''
+      tags:
+      - customers
+    put:
+      operationId: updateCustomer
+      description: Provides API for Customer entity.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this customer.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Customer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+          description: ''
+      tags:
+      - customers
+    patch:
+      operationId: partialUpdateCustomer
+      description: Provides API for Customer entity.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this customer.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Customer'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Customer'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Customer'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Customer'
+          description: ''
+      tags:
+      - customers
+    delete:
+      operationId: destroyCustomer
+      description: Provides API for Customer entity.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this customer.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - customers
+  /mailing_lists/:
+    get:
+      operationId: listMailingLists
+      description: Provides API for MailingList entity.
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MailingList'
+          description: ''
+      tags:
+      - mailing-lists
+    post:
+      operationId: createMailingList
+      description: Provides API for MailingList entity.
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MailingList'
+          description: ''
+      tags:
+      - mailing-lists
+  /mailing_lists/{id}/:
+    get:
+      operationId: retrieveMailingList
+      description: Provides API for MailingList entity.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this mailing list.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MailingList'
+          description: ''
+      tags:
+      - mailing-lists
+    put:
+      operationId: updateMailingList
+      description: Provides API for MailingList entity.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this mailing list.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MailingList'
+          description: ''
+      tags:
+      - mailing-lists
+    patch:
+      operationId: partialUpdateMailingList
+      description: Provides API for MailingList entity.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this mailing list.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MailingList'
+          description: ''
+      tags:
+      - mailing-lists
+    delete:
+      operationId: destroyMailingList
+      description: Provides API for MailingList entity.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this mailing list.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - mailing-lists
+  /mailing_lists/{id}/messages/:
+    get:
+      operationId: messagesMailingList
+      description: Provides API for MailingList entity.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this mailing list.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MailingList'
+          description: ''
+      tags:
+      - mailing-lists
+  /mailing_lists_statistics/:
+    get:
+      operationId: listMailingListsStatisticsViewSets
+      description: Provides API for mailing lists statistics.
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items: {}
+          description: ''
+      tags:
+      - mailing-lists-statistics
+  /active_mailing_lists/:
+    get:
+      operationId: listMailingLists
+      description: Provides API for active mailing lists.
+      parameters: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/MailingList'
+          description: ''
+      tags:
+      - active-mailing-lists
+    post:
+      operationId: createMailingList
+      description: Provides API for active mailing lists.
+      parameters: []
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MailingList'
+          description: ''
+      tags:
+      - active-mailing-lists
+  /active_mailing_lists/{id}/:
+    get:
+      operationId: retrieveMailingList
+      description: Provides API for active mailing lists.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this mailing list.
+        schema:
+          type: string
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MailingList'
+          description: ''
+      tags:
+      - active-mailing-lists
+    put:
+      operationId: updateMailingList
+      description: Provides API for active mailing lists.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this mailing list.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MailingList'
+          description: ''
+      tags:
+      - active-mailing-lists
+    patch:
+      operationId: partialUpdateMailingList
+      description: Provides API for active mailing lists.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this mailing list.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MailingList'
+          description: ''
+      tags:
+      - active-mailing-lists
+    delete:
+      operationId: destroyMailingList
+      description: Provides API for active mailing lists.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this mailing list.
+        schema:
+          type: string
+      responses:
+        '204':
+          description: ''
+      tags:
+      - active-mailing-lists
+  /active_mailing_lists/{id}/send_message/:
+    post:
+      operationId: sendMessageMailingList
+      description: Sends message to selected customer.
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: A unique integer value identifying this mailing list.
+        schema:
+          type: string
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/MailingList'
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MailingList'
+          description: ''
+      tags:
+      - active-mailing-lists
+components:
+  schemas:
+    Customer:
+      type: object
+      properties:
+        phone_number:
+          type: string
+          description: 'Phone number of the customer in format: 7XXXXXXXXXX.'
+          pattern: ^7\d{10}$
+          maxLength: 11
+        tag:
+          type: string
+          description: Tag, not more then 100 characters.
+          maxLength: 100
+        time_zone:
+          type: string
+          description: Customer time zone.
+          maxLength: 50
+      required:
+      - phone_number
+      - tag
+      - time_zone
+    MailingList:
+      type: object
+      properties:
+        start:
+          type: string
+          format: date-time
+          description: Start date and time of the sending process.
+        stop:
+          type: string
+          format: date-time
+          description: End date and time of the sending process.
+        message:
+          type: string
+          description: Message to send.
+        filter_phone_code:
+          type: string
+          description: Mobile operator phone code for filtering customers, 3 digits.
+          pattern: ^\d{3}$
+          maxLength: 3
+        filter_tag:
+          type: string
+          description: Tag for filtering customers, not more then 100 characters.
+          maxLength: 100
+      required:
+      - start
+      - stop
+      - message
+      - filter_phone_code
+      - filter_tag
