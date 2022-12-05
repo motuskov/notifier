@@ -38,6 +38,7 @@ class MessageAdmin(admin.ModelAdmin):
     )
     readonly_fields = (
         'status',
+        'error_description',
         'mailing_list',
         'customer',
     )
